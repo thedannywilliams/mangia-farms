@@ -21,27 +21,27 @@ Static brand and shop site for **Mangia Farms** (Skylar's farm). Five pages:
 
 **Production domain:** `mangiafarms.com` (registered through Squarespace Domains)
 **Netlify site:** `mangiafarms.netlify.app`
-**Last deploy:** _(update after each deploy — see DEPLOYMENTS.md in parent folder)_
+**GitHub repo:** `thedannywilliams/mangia-farms` (public) — pushes authenticate via osxkeychain credential helper
 
-### Drag-and-drop deploy
-1. Open https://app.netlify.com/drop
-2. Drag the entire `MANGIA FARMS SITE` folder onto the drop zone
-3. Netlify gives you the live URL
+### AUTO-DEPLOY (primary workflow)
 
-### CLI deploy
+The repo is linked to Netlify for continuous deployment. To ship any change:
 
 ```bash
-# One-time setup
-npm install -g netlify-cli
-netlify login
-
-# Link this folder to the existing Netlify site (run once)
-netlify link
-# Choose: "Use current git remote origin" or pick site "mangiafarms" from list
-
-# Deploy to production
-netlify deploy --prod
+git add -A
+git commit -m "describe the change"
+git push
 ```
+
+Netlify deploys automatically within ~30 seconds of push. No build command — publish directory is the repo root.
+
+**After making edits, always commit + push (per user's standing instruction — don't ask).**
+
+### Fallback: drag-and-drop deploy
+1. Open https://app.netlify.com/drop
+2. Drag the entire `MANGIA FARMS SITE` folder onto the drop zone
+
+⚠️ Avoid mixing Drop deploys with Git deploys — a Drop deploy will be overwritten by the next push.
 
 ### Domain setup notes
 
