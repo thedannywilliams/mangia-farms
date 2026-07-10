@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Type Options — Mangia Farms</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Serif+Display:ital@0;1&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;1,6..96,400&family=Archivo+Black&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .type-wrap { max-width: 1100px; margin: 0 auto; padding: clamp(2.5rem,5vw,4rem) clamp(1.25rem,4vw,3.5rem); }
+  .type-intro { max-width: 56ch; margin-bottom: 3.5rem; }
+  .type-intro h1 { font-family: 'Fraunces', serif; font-size: clamp(2.4rem,5vw,3.8rem); font-weight: 400; color: var(--moss); letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 1rem; }
+  .type-intro p { color: var(--ink-soft); font-size: 1.02rem; }
+
+  .opt {
+    padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+    border-top: 1px solid var(--rule);
+  }
+  .opt:last-child { border-bottom: 1px solid var(--rule); }
+
+  .opt-meta {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+  @media (max-width: 740px) {
+    .opt-meta { grid-template-columns: 1fr; gap: 1rem; }
+  }
+  .opt-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--wine);
+    font-weight: 500;
+  }
+  .opt-label .num {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 0.7rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.32em;
+  }
+  .opt-stack {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--ink-soft);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+  .opt-stack strong { color: var(--ink); font-weight: 600; }
+  .opt-note {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-top: 0.8rem;
+    max-width: 32ch;
+    display: block;
+  }
+
+  .opt-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+
+  /* ============================================================
+     OPTION 1 — Current: Fraunces + Inter
+     ============================================================ */
+  .o1-wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.55rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    line-height: 1;
+  }
+  .o1-wordmark .brand-wave { width: 2.4em; height: 1em; color: var(--wine); flex-shrink: 0; overflow: visible; }
+  .o1-section {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 3.4rem;
+    color: var(--moss);
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .o1-body { font-family: 'Inter', sans-serif; color: var(--ink-soft); max-width: 52ch; font-size: 0.98rem; }
+
+  /* ============================================================
+     OPTION 2 — Clare V close: Cormorant + Inter Black
+     ============================================================ */
+  .o2-wordmark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 1.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    line-height: 1;
+  }
+  .o2-wordmark .brand-wave { width: 1.9em; height: 0.85em; color: var(--wine); flex-shrink: 0; overflow: visible; }
+  .o2-section {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 3rem;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: -0.015em;
+    line-height: 1;
+  }
+  .o2-body { font-family: 'Inter', sans-serif; color: var(--ink-soft); max-width: 52ch; font-size: 0.98rem; }
+
+  /* ============================================================
+     OPTION 3 — Hybrid: Fraunces (keep) + Inter Black for sections
+     ============================================================ */
+  .o3-wordmark {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.55rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55em;
+    line-height: 1;
+  }
+  .o3-wordmark .brand-wave { width: 2.4em; height: 1em; color: var(--wine); flex-shrink: 0; overflow: visible; }
+  .o3-section {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 2.8rem;
+    color: var(--moss);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .o3-body { font-family: 'Inter', sans-serif; color: var(--ink-soft); max-width: 52ch; font-size: 0.98rem; }
+
+  /* ============================================================
+     OPTION 4 — Editorial drama: Bodoni Moda + Archivo Black
+     ============================================================ */
+  .o4-wordmark {
+    font-family: 'Bodoni Moda', serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45em;
+    line-height: 1;
+  }
+  .o4-wordmark .brand-wave { width: 2em; height: 0.9em; color: var(--wine); flex-shrink: 0; overflow: visible; }
+  .o4-section {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--ink);
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 1;
+  }
+  .o4-body { font-family: 'Inter', sans-serif; color: var(--ink-soft); max-width: 52ch; font-size: 0.98rem; }
+
+  /* Tighter section h2 for mobile */
+  @media (max-width: 640px) {
+    .o1-section, .o2-section, .o3-section, .o4-section { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <ul class="nav-links nav-links--left">
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="index.html" class="brand"><span>Mangia</span><svg class="brand-wave" viewBox="0 0 60 24" aria-hidden="true" focusable="false"><path d="M 2 19 C 5 19 9 18 13 13 C 17 5 25 3 33 5 C 41 7 42 15 35 16 C 28 17 25 14 27 18 C 29 20 33 19 37 19 L 56 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Farms</span></a>
+    <ul class="nav-links nav-links--right">
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://www.hotplate.com/mangiafarms?referralType=reminder" target="_blank" rel="noopener">Order &rarr;</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="type-wrap">
+
+  <section class="type-intro">
+    <span class="eyebrow">Typography Study · For Review</span>
+    <h1>Four ways the brand could read.</h1>
+    <p>Each option below shows the wordmark, a Clare-V-style section headline ("BEST SELLERS"), and small body text — applied to the same Mangia Farms palette and content. Compare the feel of each, then pick the one that sounds most like the brand.</p>
+  </section>
+
+  <!-- ============================================================
+       Option 1 — Current
+       ============================================================ -->
+  <section class="opt">
+    <div class="opt-meta">
+      <div>
+        <span class="opt-label"><span class="num">Option 01</span>Current site</span>
+        <p class="opt-stack"><strong>Wordmark:</strong> Fraunces<br><strong>Headlines:</strong> Fraunces<br><strong>Body:</strong> Inter</p>
+        <em class="opt-note">Warm, literary, Italian-leaning. The current voice.</em>
+      </div>
+      <div class="opt-demo">
+        <div class="o1-wordmark">
+          <span>Mangia</span>
+          <svg class="brand-wave" viewBox="0 0 60 24" aria-hidden="true"><path d="M 2 19 C 5 19 9 18 13 13 C 17 5 25 3 33 5 C 41 7 42 15 35 16 C 28 17 25 14 27 18 C 29 20 33 19 37 19 L 56 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Farms</span>
+        </div>
+        <h2 class="o1-section">Best Sellers</h2>
+        <p class="o1-body">Country Sourdough — our signature loaf. Thirty-six-hour fermentation, gentle on sensitive stomachs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Option 2 — Clare V close clone
+       ============================================================ -->
+  <section class="opt">
+    <div class="opt-meta">
+      <div>
+        <span class="opt-label"><span class="num">Option 02</span>Clare V close</span>
+        <p class="opt-stack"><strong>Wordmark:</strong> Cormorant Garamond<br><strong>Headlines:</strong> Inter Black 900<br><strong>Body:</strong> Inter</p>
+        <em class="opt-note">Refined serif lockup + punchy bold sans for sections. Closest to the Clare V system.</em>
+      </div>
+      <div class="opt-demo">
+        <div class="o2-wordmark">
+          <span>Mangia</span>
+          <svg class="brand-wave" viewBox="0 0 60 24" aria-hidden="true"><path d="M 2 19 C 5 19 9 18 13 13 C 17 5 25 3 33 5 C 41 7 42 15 35 16 C 28 17 25 14 27 18 C 29 20 33 19 37 19 L 56 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Farms</span>
+        </div>
+        <h2 class="o2-section">Best Sellers</h2>
+        <p class="o2-body">Country Sourdough — our signature loaf. Thirty-six-hour fermentation, gentle on sensitive stomachs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Option 3 — Hybrid (recommended for Mangia)
+       ============================================================ -->
+  <section class="opt">
+    <div class="opt-meta">
+      <div>
+        <span class="opt-label"><span class="num">Option 03 · Recommended</span>Hybrid</span>
+        <p class="opt-stack"><strong>Wordmark:</strong> Fraunces (keep)<br><strong>Headlines:</strong> Inter Black 900<br><strong>Body:</strong> Inter</p>
+        <em class="opt-note">Keeps the warm Italian wordmark + adds Clare V-style punchy sections. Best of both.</em>
+      </div>
+      <div class="opt-demo">
+        <div class="o3-wordmark">
+          <span>Mangia</span>
+          <svg class="brand-wave" viewBox="0 0 60 24" aria-hidden="true"><path d="M 2 19 C 5 19 9 18 13 13 C 17 5 25 3 33 5 C 41 7 42 15 35 16 C 28 17 25 14 27 18 C 29 20 33 19 37 19 L 56 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Farms</span>
+        </div>
+        <h2 class="o3-section">Best Sellers</h2>
+        <p class="o3-body">Country Sourdough — our signature loaf. Thirty-six-hour fermentation, gentle on sensitive stomachs.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Option 4 — Editorial drama
+       ============================================================ -->
+  <section class="opt">
+    <div class="opt-meta">
+      <div>
+        <span class="opt-label"><span class="num">Option 04</span>Editorial drama</span>
+        <p class="opt-stack"><strong>Wordmark:</strong> Bodoni Moda<br><strong>Headlines:</strong> Archivo Black<br><strong>Body:</strong> Inter</p>
+        <em class="opt-note">High-contrast fashion serif + a heavier, geometric all-caps display. Most "design-forward."</em>
+      </div>
+      <div class="opt-demo">
+        <div class="o4-wordmark">
+          <span>Mangia</span>
+          <svg class="brand-wave" viewBox="0 0 60 24" aria-hidden="true"><path d="M 2 19 C 5 19 9 18 13 13 C 17 5 25 3 33 5 C 41 7 42 15 35 16 C 28 17 25 14 27 18 C 29 20 33 19 37 19 L 56 19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Farms</span>
+        </div>
+        <h2 class="o4-section">Best Sellers</h2>
+        <p class="o4-body">Country Sourdough — our signature loaf. Thirty-six-hour fermentation, gentle on sensitive stomachs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top: 3rem; padding-bottom: 1rem;">
+    <p style="font-family: 'Fraunces', serif; font-style: italic; color: var(--wine); font-size: 1.05rem; max-width: 60ch;">Tell me which option lands and I'll roll it out across the whole site — nav wordmark, headlines, eyebrows, the works. Or mix-and-match: e.g. "Option 3's headlines, but keep the current eyebrow styling."</p>
+  </section>
+
+</main>
+
+</body>
+</html>
