@@ -304,24 +304,36 @@ h2 em.script {
    in, a warm sepia gradient stands in (looks intentional). A soft light
    center scrim keeps the dark burgundy monogram legible over the photo. */
 .monogram-cover {
-  position: relative;
   width: 100%;
-  min-height: clamp(420px, 66vh, 640px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: clamp(3rem, 8vw, 6rem) var(--gutter);
+  min-height: clamp(260px, 34vw, 520px);
   background-color: var(--cream-deep);
-  background-image:
-    radial-gradient(62% 72% at 50% 48%, rgba(247,238,207,0.42), rgba(247,238,207,0) 72%),
-    url('img/hero-italian.jpg'),
-    linear-gradient(180deg, #efe6d0 0%, #e6dabf 55%, #d8c8a4 100%);
-  background-size: auto, cover, cover;
-  background-position: center, center, center;
-  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-image: url('img/hero-italian.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* ---------- Events page header banner + centered note ---------- */
+.events-header {
+  width: 100%;
+  min-height: clamp(300px, 46vw, 600px);
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(180deg, rgba(20,14,8,0.10) 0%, rgba(20,14,8,0.30) 100%),
+    url('img/events-header.jpg');
+  background-size: cover, cover;
+  background-position: center 42%, center 42%;
+  background-repeat: no-repeat, no-repeat;
+}
+.events-note {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vw, 2.5rem) var(--gutter);
+  text-align: center;
+}
+.events-note h2 { margin: 0.4rem 0 1.1rem; }
+.events-note p { color: var(--ink-soft); margin-bottom: 1rem; }
+.events-note .btn { margin-top: 0.8rem; }
 .monogram-cover .cover-mark {
   width: clamp(220px, 34vw, 460px);
   height: auto;
