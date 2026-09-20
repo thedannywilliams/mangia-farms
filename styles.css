@@ -4,20 +4,35 @@
    ============================================ */
 
 :root {
-  /* Sun-on-Mediterranean palette: cobalt sea, persimmon harvest, cream linen. */
-  --cream:        #f7eecf;
-  --cream-deep:   #eee2b5;
-  --bone:         #fbf6e2;
-  --wheat:        #d4aa63;
-  --sage:         #b65331;  /* terracotta — supporting warm */
-  --sage-deep:    #8d3f23;
-  --moss:         #1b95e0;  /* sky blue — headings + brand */
-  --navy:         #105f99;  /* deep navy — dark-band surfaces (markets + footer) */
-  --wine:         #e45527;  /* persimmon orange — accents + emphasis */
-  --wine-deep:    #b7401a;
-  --ink:          #1a1f2e;
-  --ink-soft:     #4b5260;
-  --rule:         rgba(26, 31, 46, 0.18);
+  /* ============================================================
+     ACTIVE SCHEME: BURGUNDY (heritage tablecloth)
+     Oxblood monogram, warm cream linen, sage-green gingham accent.
+     Variable NAMES are legacy (--moss/--navy/--wine); values below
+     define the burgundy world. To revert to the BLUE scheme, comment
+     this block and uncomment "BLUE SCHEME" below — nothing else changes.
+     ============================================================ */
+  --cream:        #f4ebd7;  /* warm cream linen — page background */
+  --cream-deep:   #ebe0c5;
+  --bone:         #faf4e6;
+  --wheat:        #c99a52;  /* honey gold — accents on dark burgundy (footer) */
+  --sage:         #8f9a6a;  /* soft sage — card tags, supporting */
+  --sage-deep:    #6f7a4e;
+  --moss:         #6d1a14;  /* BURGUNDY — headings + brand */
+  --navy:         #4a0f0b;  /* DEEP BURGUNDY — dark-band surfaces (markets + footer) */
+  --wine:         #6f7a4e;  /* SAGE GREEN — eyebrows, italic emphasis, prices (on cream) */
+  --wine-deep:    #586440;
+  --ink:          #2c1c15;  /* warm dark brown — body text */
+  --ink-soft:     #6a5a4f;
+  --rule:         rgba(44, 28, 21, 0.18);
+
+  /* ------------------------------------------------------------
+     BLUE SCHEME (previous — Sun-on-Mediterranean). To restore:
+     comment the burgundy values above and uncomment these.
+     --cream:#f7eecf; --cream-deep:#eee2b5; --bone:#fbf6e2;
+     --wheat:#d4aa63; --sage:#b65331; --sage-deep:#8d3f23;
+     --moss:#1b95e0; --navy:#105f99; --wine:#e45527; --wine-deep:#b7401a;
+     --ink:#1a1f2e; --ink-soft:#4b5260; --rule:rgba(26,31,46,0.18);
+     ------------------------------------------------------------ */
 
   --serif:  'Fraunces', 'Cormorant Garamond', Georgia, serif;
   --sans:   'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
@@ -182,6 +197,14 @@ h2 em.script {
   flex-shrink: 0;
   overflow: visible;
 }
+
+/* New MF monogram logo mark (replaces the wave wordmark) */
+.brand-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 720px) { .brand-logo { height: 54px; } }
 
 .brand .amp {
   font-style: italic;
@@ -1005,6 +1028,7 @@ footer {
 }
 .footer-brand .brand-wave { color: var(--wheat); }
 .footer-brand .amp { font-style: italic; color: var(--wheat); margin: 0 0.15em; font-weight: 300; }
+.footer-logo { height: 96px; width: auto; display: block; margin-bottom: 0.4rem; }
 .footer-tag {
   font-family: var(--serif);
   font-style: italic;
