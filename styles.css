@@ -5,29 +5,42 @@
 
 :root {
   /* ============================================================
-     ACTIVE SCHEME: BURGUNDY (heritage tablecloth)
-     Oxblood monogram, warm cream linen, sage-green gingham accent.
-     Variable NAMES are legacy (--moss/--navy/--wine); values below
-     define the burgundy world. To revert to the BLUE scheme, comment
-     this block and uncomment "BLUE SCHEME" below — nothing else changes.
+     ACTIVE SCHEME: BLUE + BURGUNDY
+     Sky-blue structure (headings, brand, dark footer/markets bands),
+     deep-burgundy accent (eyebrows, italic emphasis, prices, buttons,
+     the hand divider) and the burgundy MF monogram logo. Cream ground,
+     honey-gold on the deep-blue footer. No green.
+     Variable NAMES are legacy: --moss/--navy hold the blues, --wine
+     holds the burgundy accent. To switch schemes, comment this block
+     and uncomment one below. Nothing else changes.
      ============================================================ */
-  --cream:        #f4ebd7;  /* warm cream linen — page background */
-  --cream-deep:   #ebe0c5;
-  --bone:         #faf4e6;
-  --wheat:        #c99a52;  /* honey gold — accents on dark burgundy (footer) */
-  --sage:         #8f9a6a;  /* soft sage — card tags, supporting */
-  --sage-deep:    #6f7a4e;
-  --moss:         #6d1a14;  /* BURGUNDY — headings + brand */
-  --navy:         #4a0f0b;  /* DEEP BURGUNDY — dark-band surfaces (markets + footer) */
-  --wine:         #6f7a4e;  /* SAGE GREEN — eyebrows, italic emphasis, prices (on cream) */
-  --wine-deep:    #586440;
-  --ink:          #2c1c15;  /* warm dark brown — body text */
-  --ink-soft:     #6a5a4f;
-  --rule:         rgba(44, 28, 21, 0.18);
+  --cream:        #f7eecf;  /* warm cream - page background */
+  --cream-deep:   #eee2b5;
+  --bone:         #fbf6e2;
+  --wheat:        #d4aa63;  /* honey gold - accents on the deep-blue footer */
+  --sage:         #b5675f;  /* dusty burgundy - light supporting */
+  --sage-deep:    #a34a42;  /* dusty burgundy - card tags */
+  --moss:         #1b95e0;  /* SKY BLUE - headings + brand structure */
+  --navy:         #105f99;  /* DEEP BLUE - markets band + footer surface */
+  --wine:         #6d1a14;  /* BURGUNDY - accent: eyebrows, italics, prices, buttons, divider */
+  --wine-deep:    #4a0f0b;  /* deep burgundy - button/hover */
+  --ink:          #1a1f2e;  /* cool dark ink - body text */
+  --ink-soft:     #4b5260;
+  --rule:         rgba(26, 31, 46, 0.18);
 
   /* ------------------------------------------------------------
-     BLUE SCHEME (previous — Sun-on-Mediterranean). To restore:
-     comment the burgundy values above and uncomment these.
+     BURGUNDY SCHEME (all-oxblood, heritage tablecloth). To restore:
+     comment the block above and uncomment these.
+     --cream:#f4ebd7; --cream-deep:#ebe0c5; --bone:#faf4e6;
+     --wheat:#c99a52; --sage:#8f9a6a; --sage-deep:#6f7a4e;
+     --moss:#6d1a14; --navy:#4a0f0b; --wine:#6f7a4e; --wine-deep:#586440;
+     --ink:#2c1c15; --ink-soft:#6a5a4f; --rule:rgba(44,28,21,0.18);
+     (also point .hand-divider rules back to var(--moss), and use the
+      burgundy hand PNG.)
+     ------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------
+     ORIGINAL BLUE + PERSIMMON SCHEME (pre-burgundy live palette).
      --cream:#f7eecf; --cream-deep:#eee2b5; --bone:#fbf6e2;
      --wheat:#d4aa63; --sage:#b65331; --sage-deep:#8d3f23;
      --moss:#1b95e0; --navy:#105f99; --wine:#e45527; --wine-deep:#b7401a;
@@ -744,7 +757,7 @@ footer { margin-top: 0; }
   content: "";
   flex: 1;
   height: 1px;
-  background: var(--moss);
+  background: var(--wine);
   opacity: 0.45;
 }
 .hand-divider img {
