@@ -5,37 +5,36 @@
 
 :root {
   /* ============================================================
-     ACTIVE SCHEME: VINTAGE (toned-down blue)
-     Old-world Tuscan mood: warm sepia-ivory paper, MUTED dusty
-     slate-blue structure (headings, brand, dark footer/markets bands,
-     way down from the old vivid sky blue), deep-burgundy accent and the
-     burgundy MF monogram logo, antique gold on the dark footer, warm
-     brown ink. Pairs with the cream-monogram vintage cover band.
-     Variable NAMES are legacy: --moss/--navy hold the muted blues,
-     --wine holds the burgundy accent. To switch schemes, comment this
-     block and uncomment one below.
+     ACTIVE SCHEME: BLUE + BURGUNDY (vivid sky blue)
+     Sky-blue structure (headings, brand, dark footer/markets bands),
+     deep-burgundy accent (eyebrows, italic emphasis, prices, buttons,
+     the hand divider) and the burgundy MF monogram logo. Cream ground,
+     honey-gold on the deep-blue footer.
+     Variable NAMES are legacy: --moss/--navy hold the blues, --wine
+     holds the burgundy accent. To switch schemes, comment this block
+     and uncomment one below.
      ============================================================ */
-  --cream:        #efe6d0;  /* warm aged ivory - page background */
-  --cream-deep:   #e5d9bd;
-  --bone:         #f5eeda;
-  --wheat:        #c19a55;  /* antique gold - accents on the dark footer */
-  --sage:         #a08a66;  /* warm sepia-taupe - light supporting */
-  --sage-deep:    #7c6a4c;  /* deep sepia-taupe - card tags */
-  --moss:         #4f6f7b;  /* MUTED SLATE-BLUE - headings + brand (toned down) */
-  --navy:         #33474e;  /* DEEP MUTED SLATE - markets band + footer surface */
+  --cream:        #f7eecf;  /* warm cream - page background */
+  --cream-deep:   #eee2b5;
+  --bone:         #fbf6e2;
+  --wheat:        #d4aa63;  /* honey gold - accents on the deep-blue footer */
+  --sage:         #b5675f;  /* dusty burgundy - light supporting */
+  --sage-deep:    #a34a42;  /* dusty burgundy - card tags */
+  --moss:         #1b95e0;  /* SKY BLUE - headings + brand structure */
+  --navy:         #105f99;  /* DEEP BLUE - markets band + footer surface */
   --wine:         #6d1a14;  /* BURGUNDY - accent: eyebrows, italics, prices, buttons, divider */
   --wine-deep:    #4a0f0b;  /* deep burgundy - button/hover */
-  --ink:          #2b2318;  /* warm dark sepia-brown - body text */
-  --ink-soft:     #6a5e4c;
-  --rule:         rgba(43, 35, 24, 0.18);
+  --ink:          #1a1f2e;  /* cool dark ink - body text */
+  --ink-soft:     #4b5260;
+  --rule:         rgba(26, 31, 46, 0.18);
 
   /* ------------------------------------------------------------
-     BLUE + BURGUNDY SCHEME (vivid sky blue + burgundy accent). Restore:
+     VINTAGE SCHEME (toned-down muted slate-blue + warm sepia). Restore:
      comment the block above and uncomment these.
-     --cream:#f7eecf; --cream-deep:#eee2b5; --bone:#fbf6e2;
-     --wheat:#d4aa63; --sage:#b5675f; --sage-deep:#a34a42;
-     --moss:#1b95e0; --navy:#105f99; --wine:#6d1a14; --wine-deep:#4a0f0b;
-     --ink:#1a1f2e; --ink-soft:#4b5260; --rule:rgba(26,31,46,0.18);
+     --cream:#efe6d0; --cream-deep:#e5d9bd; --bone:#f5eeda;
+     --wheat:#c19a55; --sage:#a08a66; --sage-deep:#7c6a4c;
+     --moss:#4f6f7b; --navy:#33474e; --wine:#6d1a14; --wine-deep:#4a0f0b;
+     --ink:#2b2318; --ink-soft:#6a5e4c; --rule:rgba(43,35,24,0.18);
      ------------------------------------------------------------ */
 
   /* ------------------------------------------------------------
@@ -299,41 +298,44 @@ h2 em.script {
   margin-bottom: 1.6rem;
 }
 
-/* ---------- Vintage monogram cover band ----------
-   Cream monogram over a warm, aged sepia photograph. The backdrop is
-   img/hero-vintage.jpg (a soft, sepia-toned placeholder); drop a real
-   Tuscan-countryside JPG at that path to swap it in, no other change. */
+/* ---------- Vintage monogram header band ----------
+   BURGUNDY monogram over a sharp, warm Tuscan-countryside photograph.
+   The backdrop is img/hero-italian.jpg; until that real photo is dropped
+   in, a warm sepia gradient stands in (looks intentional). A soft light
+   center scrim keeps the dark burgundy monogram legible over the photo. */
 .monogram-cover {
   position: relative;
   width: 100%;
-  min-height: clamp(440px, 72vh, 700px);
+  min-height: clamp(420px, 66vh, 640px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: clamp(3.5rem, 9vw, 7rem) var(--gutter);
-  background-color: var(--navy);
+  padding: clamp(3rem, 8vw, 6rem) var(--gutter);
+  background-color: var(--cream-deep);
   background-image:
-    linear-gradient(180deg, rgba(28,22,14,0.52) 0%, rgba(28,22,14,0.34) 45%, rgba(28,22,14,0.58) 100%),
-    url('img/hero-vintage.jpg');
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+    radial-gradient(62% 72% at 50% 48%, rgba(247,238,207,0.42), rgba(247,238,207,0) 72%),
+    url('img/hero-italian.jpg'),
+    linear-gradient(180deg, #efe6d0 0%, #e6dabf 55%, #d8c8a4 100%);
+  background-size: auto, cover, cover;
+  background-position: center, center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
 }
 .monogram-cover .cover-mark {
-  width: clamp(190px, 27vw, 350px);
+  width: clamp(220px, 34vw, 460px);
   height: auto;
-  filter: drop-shadow(0 3px 22px rgba(0,0,0,0.4));
+  filter: drop-shadow(0 2px 14px rgba(255, 248, 230, 0.55));
 }
 .monogram-cover .cover-eyebrow {
-  margin-top: 1.5rem;
+  margin-top: 1.4rem;
   font-family: var(--sans);
   font-size: 0.72rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--wheat);
-  opacity: 0.95;
+  color: var(--wine);
+  opacity: 0.92;
+  text-shadow: 0 1px 8px rgba(255, 248, 230, 0.6);
 }
 
 .hero-title {
