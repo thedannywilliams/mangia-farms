@@ -5,31 +5,41 @@
 
 :root {
   /* ============================================================
-     ACTIVE SCHEME: BLUE + BURGUNDY
-     Sky-blue structure (headings, brand, dark footer/markets bands),
-     deep-burgundy accent (eyebrows, italic emphasis, prices, buttons,
-     the hand divider) and the burgundy MF monogram logo. Cream ground,
-     honey-gold on the deep-blue footer. No green.
-     Variable NAMES are legacy: --moss/--navy hold the blues, --wine
-     holds the burgundy accent. To switch schemes, comment this block
-     and uncomment one below. Nothing else changes.
+     ACTIVE SCHEME: VINTAGE (toned-down blue)
+     Old-world Tuscan mood: warm sepia-ivory paper, MUTED dusty
+     slate-blue structure (headings, brand, dark footer/markets bands,
+     way down from the old vivid sky blue), deep-burgundy accent and the
+     burgundy MF monogram logo, antique gold on the dark footer, warm
+     brown ink. Pairs with the cream-monogram vintage cover band.
+     Variable NAMES are legacy: --moss/--navy hold the muted blues,
+     --wine holds the burgundy accent. To switch schemes, comment this
+     block and uncomment one below.
      ============================================================ */
-  --cream:        #f7eecf;  /* warm cream - page background */
-  --cream-deep:   #eee2b5;
-  --bone:         #fbf6e2;
-  --wheat:        #d4aa63;  /* honey gold - accents on the deep-blue footer */
-  --sage:         #b5675f;  /* dusty burgundy - light supporting */
-  --sage-deep:    #a34a42;  /* dusty burgundy - card tags */
-  --moss:         #1b95e0;  /* SKY BLUE - headings + brand structure */
-  --navy:         #105f99;  /* DEEP BLUE - markets band + footer surface */
+  --cream:        #efe6d0;  /* warm aged ivory - page background */
+  --cream-deep:   #e5d9bd;
+  --bone:         #f5eeda;
+  --wheat:        #c19a55;  /* antique gold - accents on the dark footer */
+  --sage:         #a08a66;  /* warm sepia-taupe - light supporting */
+  --sage-deep:    #7c6a4c;  /* deep sepia-taupe - card tags */
+  --moss:         #4f6f7b;  /* MUTED SLATE-BLUE - headings + brand (toned down) */
+  --navy:         #33474e;  /* DEEP MUTED SLATE - markets band + footer surface */
   --wine:         #6d1a14;  /* BURGUNDY - accent: eyebrows, italics, prices, buttons, divider */
   --wine-deep:    #4a0f0b;  /* deep burgundy - button/hover */
-  --ink:          #1a1f2e;  /* cool dark ink - body text */
-  --ink-soft:     #4b5260;
-  --rule:         rgba(26, 31, 46, 0.18);
+  --ink:          #2b2318;  /* warm dark sepia-brown - body text */
+  --ink-soft:     #6a5e4c;
+  --rule:         rgba(43, 35, 24, 0.18);
 
   /* ------------------------------------------------------------
-     BURGUNDY SCHEME (all-oxblood, heritage tablecloth). To restore:
+     BLUE + BURGUNDY SCHEME (vivid sky blue + burgundy accent). Restore:
+     comment the block above and uncomment these.
+     --cream:#f7eecf; --cream-deep:#eee2b5; --bone:#fbf6e2;
+     --wheat:#d4aa63; --sage:#b5675f; --sage-deep:#a34a42;
+     --moss:#1b95e0; --navy:#105f99; --wine:#6d1a14; --wine-deep:#4a0f0b;
+     --ink:#1a1f2e; --ink-soft:#4b5260; --rule:rgba(26,31,46,0.18);
+     ------------------------------------------------------------ */
+
+  /* ------------------------------------------------------------
+     BURGUNDY SCHEME (all-oxblood, heritage tablecloth). Restore:
      comment the block above and uncomment these.
      --cream:#f4ebd7; --cream-deep:#ebe0c5; --bone:#faf4e6;
      --wheat:#c99a52; --sage:#8f9a6a; --sage-deep:#6f7a4e;
@@ -287,6 +297,43 @@ h2 em.script {
   width: clamp(140px, 18vw, 220px);
   height: auto;
   margin-bottom: 1.6rem;
+}
+
+/* ---------- Vintage monogram cover band ----------
+   Cream monogram over a warm, aged sepia photograph. The backdrop is
+   img/hero-vintage.jpg (a soft, sepia-toned placeholder); drop a real
+   Tuscan-countryside JPG at that path to swap it in, no other change. */
+.monogram-cover {
+  position: relative;
+  width: 100%;
+  min-height: clamp(440px, 72vh, 700px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(3.5rem, 9vw, 7rem) var(--gutter);
+  background-color: var(--navy);
+  background-image:
+    linear-gradient(180deg, rgba(28,22,14,0.52) 0%, rgba(28,22,14,0.34) 45%, rgba(28,22,14,0.58) 100%),
+    url('img/hero-vintage.jpg');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+}
+.monogram-cover .cover-mark {
+  width: clamp(190px, 27vw, 350px);
+  height: auto;
+  filter: drop-shadow(0 3px 22px rgba(0,0,0,0.4));
+}
+.monogram-cover .cover-eyebrow {
+  margin-top: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--wheat);
+  opacity: 0.95;
 }
 
 .hero-title {
