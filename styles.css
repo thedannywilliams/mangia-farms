@@ -67,7 +67,7 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html, body { overflow-x: hidden; max-width: 100%; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
   font-family: var(--sans);
@@ -1051,7 +1051,7 @@ form { display: flex; flex-direction: column; gap: 1.2rem; }
   background: var(--bone);
   border: 1px solid var(--rule);
   font-family: var(--sans);
-  font-size: 0.98rem;
+  font-size: 1rem; /* >=16px prevents iOS Safari zoom-on-focus */
   color: var(--ink);
   outline: none;
   transition: border-color 0.2s ease;
