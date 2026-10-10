@@ -1,0 +1,4 @@
+# security: hide non-web file
+/CLAUDE.md  /404.html  404!
+# security: hide non-web file
+/README.md  /404.html  404!
